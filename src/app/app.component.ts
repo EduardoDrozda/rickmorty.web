@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { FontsModule } from '@shared/modules/fonts';
+import { HeaderComponent } from '@shared/components';
 
 @Component({
   selector: 'rickmorty-root',
   standalone: true,
-  imports: [RouterOutlet, FontsModule],
+  imports: [RouterOutlet, HeaderComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
