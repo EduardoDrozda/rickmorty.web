@@ -1,17 +1,18 @@
 <header class="header">
   <img class="header__logo" src="/png/logo.png" />
   <nav class="header__nav">
-    <ng-container *ngFor="let menu of menus">
-      <div
-        class="header__nav-item"
-        [routerLink]="menu.path"
-        routerLinkActive="active"
-      >
-        <span class="header__nav-item-icon">
-          <fa-icon [icon]="menu.icon"></fa-icon>
-        </span>
-        <span>{{ menu.name }}</span>
-      </div>
-    </ng-container>
+    @for (menu of menus; track $index) {
+    <div
+      class="header__nav-item"
+      [routerLink]="menu.path"
+      routerLinkActive="active"
+    >
+      <span class="header__nav-item-icon">
+        <fa-icon [icon]="menu.icon"></fa-icon>
+      </span>
+      <span>{{ menu.name }}</span>
+      <span class="header__nav-item-badge">{{ favoriteCount }}</span>
+    </div>
+    }
   </nav>
 </header>

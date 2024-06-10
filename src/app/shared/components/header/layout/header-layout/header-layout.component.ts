@@ -13,7 +13,7 @@ import { Router, RouterModule } from '@angular/router';
   styleUrl: './header-layout.component.scss',
 })
 export class HeaderLayoutComponent {
-  @Input() favoriteCount!: number;
+  @Input() favoriteCount = 0;
 
   menus: IMenuDataAccess[] = [
     {
