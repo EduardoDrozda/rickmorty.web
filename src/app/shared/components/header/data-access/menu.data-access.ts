@@ -3,6 +3,7 @@ import { RoutesEnum } from '@shared/enums';
 
 export interface IMenuDataAccess {
   name: string;
-  path: RoutesEnum;
+  path: string;
   icon: IconDefinition;
+  hasCount?: boolean;
 }

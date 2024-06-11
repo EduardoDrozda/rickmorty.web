@@ -23,6 +23,7 @@
       padding: 0.813rem 1rem;
       color: var(--color-core-neutral-surface);
       cursor: pointer;
+      text-decoration: none;
 
       &:first-child {
         border-radius: 0.625rem 0 0 0.625rem;
@@ -36,7 +37,7 @@
         background-color: var(--color-core-neutral-content);
       }
 
-      &.active {
+      &--active {
         background-color: #fff;
         color: #000;
 
@@ -50,14 +51,15 @@
       }
 
       &-badge {
-        background-color: #fff;
+        background-color: var(--color-core-neutral-surface);
         display: flex;
         justify-content: center;
         align-items: center;
-        color: #000;
-        border-radius: 50%;
+        color: var(--color-core-black);
+        border-radius: 100%;
         padding: 0.313rem 0.625rem;
         margin-left: 0.5rem;
+        font-weight: bold;
       }
     }
   }
@@ -65,6 +67,6 @@
   @include md {
     justify-content: space-between;
     flex-direction: row;
-    padding: 0 1.5rem;
+    padding: 0.5rem 1.5rem;
   }
 }
