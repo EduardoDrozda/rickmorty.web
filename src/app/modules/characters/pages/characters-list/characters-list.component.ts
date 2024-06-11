@@ -1,12 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { CharactersListLayoutComponent } from './layout/characters-list-layout';
 
 @Component({
   selector: 'rickmorty-characters-list',
   standalone: true,
-  imports: [],
+  imports: [CharactersListLayoutComponent],
   templateUrl: './characters-list.component.html',
-  styleUrl: './characters-list.component.scss'
+  styleUrl: './characters-list.component.scss',
 })
-export class CharactersListComponent {
-
-}
+export class CharactersListComponent {}

@@ -16,9 +16,13 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  row-gap: 0.7rem;
 
   @include md {
     justify-content: space-between;
+    flex-direction: row;
+    row-gap: 0;
   }
 
   &__title {
