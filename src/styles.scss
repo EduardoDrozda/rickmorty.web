@@ -1,3 +1,5 @@
+@import "mixins.scss";
+
 * {
   margin: 0;
   padding: 0;
@@ -7,4 +9,34 @@
 
 body {
   background-color: var(--color-core-background);
+}
+
+.page-header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include md {
+    justify-content: space-between;
+  }
+
+  &__title {
+    font-size: 3rem;
+    letter-spacing: 0.3rem;
+    font-family: "Creepster", "Comic Sans MS", "Comic Sans", cursive;
+    color: var(--color-core-light-blue);
+    text-shadow: -1px -1px 0 var(--color-core-light-green),
+      1px -1px 0 var(--color-core-light-green),
+      -1px 1px 0 var(--color-core-light-green),
+      1px 1px 0 var(--color-core-light-green),
+      -2px -2px 0 var(--color-core-light-green),
+      2px -2px 0 var(--color-core-light-green),
+      -2px 2px 0 var(--color-core-light-green),
+      2px 2px 0 var(--color-core-light-green),
+      -3px -3px 0 var(--color-core-light-green),
+      3px -3px 0 var(--color-core-light-green),
+      -3px 3px 0 var(--color-core-light-green),
+      3px 3px 0 var(--color-core-light-green);
+  }
 }

@@ -1,3 +1,9 @@
+@import "mixins.scss";
+
 .main {
-  margin-top: 48px;
+  margin: 3rem 1.5rem;
+
+  @include md {
+    margin: 3rem 22.5rem;
+  }
 }
