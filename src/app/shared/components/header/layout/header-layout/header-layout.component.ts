@@ -1,11 +1,11 @@
 import { Component, Input } from '@angular/core';
-import { IMenuDataAccess } from '../../data-access';
 import { CommonModule } from '@angular/common';
 import { RoutesEnum } from '@shared/enums';
 import { APP_ICONS, FontsModule } from '@shared/modules';
 import { NavigationEnd, Router, RouterModule } from '@angular/router';
 import { filter } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { IMenu } from '../../interfaces';
 
 @Component({
   selector: 'rickmorty-header-layout',
@@ -19,7 +19,7 @@ export class HeaderLayoutComponent {
 
   currentRoute!: string;
 
-  menus: IMenuDataAccess[] = [
+  menus: IMenu[] = [
     {
       name: 'Inicio',
       path: `/${RoutesEnum.CHARACTERS}`,

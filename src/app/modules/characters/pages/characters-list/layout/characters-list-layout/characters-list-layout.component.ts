@@ -1,8 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { FeedbackInfoComponent } from '@modules/characters/shared/components';
+import { ICharacterViewModel } from '@modules/characters/shared/interfaces/view-models';
 import { debounceTime, distinctUntilChanged } from 'rxjs';
 
 @Component({
@@ -13,6 +14,8 @@ import { debounceTime, distinctUntilChanged } from 'rxjs';
   styleUrl: './characters-list-layout.component.scss',
 })
 export class CharactersListLayoutComponent {
+  @Input() characters: ICharacterViewModel[] | null = [];
+
   searchControl = new FormControl('');
 
   constructor() {
