@@ -4,11 +4,12 @@
     <div class="characters-list__form">
       <div class="input">
         <input
+          id="search"
           [formControl]="searchControl"
           placeholder="Ex: Annie"
           type="text"
         />
-        <label>Pesquisar</label>
+        <label for="id">Pesquisar</label>
       </div>
     </div>
   </div>
@@ -17,7 +18,6 @@
     <div class="characters-list__content-list">
       @for (character of characters; track $index) {
       <rickmorty-characters-card [character]="character" />
-
       }
     </div>
   </div>
