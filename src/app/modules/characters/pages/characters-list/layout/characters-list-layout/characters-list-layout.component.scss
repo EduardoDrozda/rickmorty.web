@@ -1,4 +1,26 @@
-.characters__content {
-  width: 100%;
-  margin-top: 3rem;
+@import "mixins.scss";
+
+.characters-list {
+  &__form {
+    width: 100%;
+
+    @include md {
+      width: auto;
+    }
+  }
+
+  &__content {
+    width: 100%;
+    margin-top: 3rem;
+  }
+
+  .page-header > .page-header__title {
+    display: none;
+  }
+
+  @include md {
+    .page-header > .page-header__title {
+      display: block;
+    }
+  }
 }

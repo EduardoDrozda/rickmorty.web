@@ -2,6 +2,7 @@
 
 .input {
   position: relative;
+  width: 100%;
 
   label {
     position: absolute;
@@ -19,6 +20,7 @@
   }
 
   input {
+    width: 100%;
     font-size: 1rem;
     outline: none;
     border: 1px solid var(--color-core-netraul-border);
