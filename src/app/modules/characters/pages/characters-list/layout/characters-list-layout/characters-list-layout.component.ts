@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import {
@@ -23,6 +23,7 @@ import { debounceTime, distinctUntilChanged } from 'rxjs';
 })
 export class CharactersListLayoutComponent {
   @Input() characters: ICharacterViewModel[] | null = [];
+  @Output() searchEvent = new EventEmitter<string>();
 
   searchControl = new FormControl('');
 
@@ -30,7 +31,12 @@ export class CharactersListLayoutComponent {
     this.searchControl.valueChanges
       .pipe(debounceTime(400), distinctUntilChanged(), takeUntilDestroyed())
       .subscribe((value) => {
-        console.log(value);
+        this.emitSearchEvent();
       });
+  }
+
+  emitSearchEvent(): void {
+    const search = this.searchControl.value ?? '';
+    this.searchEvent.emit(search);
   }
 }

@@ -16,7 +16,16 @@ export class CharactersListComponent implements OnInit {
 
   characters$!: Observable<ICharacterViewModel[]>;
 
-  ngOnInit() {
-    this.characters$ = this.charactersService.getCharacters();
+  ngOnInit(): void {
+    this.getCharacters();
+  }
+
+  getCharacterByName(name: string): void {
+    this.getCharacters({ name });
+  }
+
+  private getCharacters(filter?: Record<string, string>): void {
+    console.log(filter);
+    this.characters$ = this.charactersService.getCharacters(filter);
   }
 }

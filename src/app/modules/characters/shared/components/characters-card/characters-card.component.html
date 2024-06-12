@@ -9,5 +9,16 @@
     <p class="characters-card__content-species">
       {{ character.species }}
     </p>
+    <div class="characters-card__content-status">
+      <div
+        class="characters-card__content-status-badge"
+        [ngClass]="{
+          'characters-card__content-status-badge--alive': character.status === 'Alive',
+          'characters-card__content-status-badge--dead': character.status === 'Dead',
+          'characters-card__content-status-badge--unknown': character.status === 'unknown'
+        }"
+      ></div>
+      <p class="characters-card__content-status-info">{{ character.status }}</p>
+    </div>
   </div>
 </div>

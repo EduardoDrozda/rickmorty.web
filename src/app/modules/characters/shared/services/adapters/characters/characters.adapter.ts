@@ -9,6 +9,7 @@ export class CharactersAdapter
     return itens.map((item) => ({
       id: item.id,
       name: item.name,
+      status: item.status,
       species: item.species,
       image: item.image,
     }));

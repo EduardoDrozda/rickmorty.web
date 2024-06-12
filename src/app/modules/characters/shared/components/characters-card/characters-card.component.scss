@@ -50,11 +50,54 @@
       font-weight: 400;
       color: var(--color-core-content-low);
       font-family: "Poppins", sans-serif;
-      margin-top: 5px;
+      margin-top: 0.5rem;
 
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+    }
+
+    &-status {
+      margin-top: 0.5rem;
+      display: flex;
+      align-items: center;
+      column-gap: 0.5rem;
+
+      &-info {
+        font-size: 1rem;
+        font-weight: 400;
+        color: var(--color-core-content-low);
+        font-family: "Poppins", sans-serif;
+        margin-top: 0.5;
+        text-transform: capitalize;
+
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      &-badge {
+        width: 0.8rem;
+        height: 0.8rem;
+        border-radius: 50%;
+        opacity: 0.8;
+
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
+        transform: scale(1);
+        animation: pulse 2s infinite;
+
+        &--alive {
+          background-color: var(--color-core-light-green);
+        }
+
+        &--dead {
+          background-color: var(--color-core-light-red);
+        }
+
+        &--unknown {
+          background-color: var(--color-core-content-low);
+        }
+      }
     }
   }
 }
