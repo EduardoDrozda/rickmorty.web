@@ -2,7 +2,7 @@ import { Routes } from '@angular/router';
 import { RoutesEnum } from '@shared/enums';
 
 export const charactersRoutes: Routes = [
-  { path: '*', redirectTo: RoutesEnum.CHARACTERS, pathMatch: 'full' },
+  { path: '', redirectTo: RoutesEnum.CHARACTERS, pathMatch: 'full' },
   {
     path: RoutesEnum.CHARACTERS,
     loadComponent: () =>

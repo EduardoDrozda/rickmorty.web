@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CharactersListLayoutComponent } from './layout/characters-list-layout';
 
 @Component({
@@ -6,6 +6,5 @@ import { CharactersListLayoutComponent } from './layout/characters-list-layout';
   standalone: true,
   imports: [CharactersListLayoutComponent],
   templateUrl: './characters-list.component.html',
-  styleUrl: './characters-list.component.scss',
 })
 export class CharactersListComponent {}
