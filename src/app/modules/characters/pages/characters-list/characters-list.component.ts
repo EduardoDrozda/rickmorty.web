@@ -24,7 +24,7 @@ export class CharactersListComponent implements OnInit {
   }
 
   getCharacterByName(name: string): void {
-    console.log(name);
+    this.characters = [];
     this.page = 1;
     this.getCharacters({ name, page: this.page.toString() });
   }
