@@ -10,7 +10,7 @@ export class CharactersAdapter
       id: item.id,
       name: item.name,
       species: item.species,
-      url: item.url,
+      image: item.image,
     }));
   }
 }

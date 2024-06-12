@@ -1,0 +1,13 @@
+<div class="characters-card">
+  <img
+    class="characters-card__image"
+    [src]="character.image"
+    alt="Imagem do personagem {{ character.name }}"
+  />
+  <div class="characters-card__content">
+    <h2 class="characters-card__content-name">{{ character.name }}</h2>
+    <p class="characters-card__content-species">
+      {{ character.species }}
+    </p>
+  </div>
+</div>

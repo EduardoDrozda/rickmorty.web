@@ -1,0 +1,60 @@
+.characters-card {
+  width: 100%;
+  background-color: var(--color-core-black);
+  border-radius: 0.5rem;
+
+  &:hover {
+    transform: scale(1.03);
+    transition: transform 0.3s ease-in-out;
+
+    .characters-card__content > .characters-card__content-name {
+      color: var(--color-core-light-blue);
+      text-shadow: -1px -1px 0 var(--color-core-light-green),
+        1px -1px 0 var(--color-core-light-green),
+        -1px 1px 0 var(--color-core-light-green),
+        1px 1px 0 var(--color-core-light-green),
+        -2px -2px 0 var(--color-core-light-green),
+        2px -2px 0 var(--color-core-light-green),
+        -2px 2px 0 var(--color-core-light-green),
+        2px 2px 0 var(--color-core-light-green),
+        -3px -3px 0 var(--color-core-light-green),
+        3px -3px 0 var(--color-core-light-green),
+        -3px 3px 0 var(--color-core-light-green),
+        3px 3px 0 var(--color-core-light-green);
+    }
+  }
+
+  &__image {
+    width: 100%;
+    object-fit: cover;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+  }
+
+  &__content {
+    padding: 1rem;
+
+    &-name {
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--color-core-white);
+      font-family: "Creepster", "Comic Sans MS", "Comic Sans", cursive;
+
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    &-species {
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--color-core-content-low);
+      font-family: "Poppins", sans-serif;
+      margin-top: 5px;
+
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}

@@ -12,7 +12,16 @@
       </div>
     </div>
   </div>
+  @if (characters?.length) {
   <div class="characters-list__content">
-    <rickmorty-feedback-info />
+    <div class="characters-list__content-list">
+      @for (character of characters; track $index) {
+      <rickmorty-characters-card [character]="character" />
+
+      }
+    </div>
   </div>
+  } @else {
+  <rickmorty-feedback-info />
+  }
 </section>

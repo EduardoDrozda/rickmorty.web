@@ -1,6 +1,11 @@
 @import "mixins.scss";
 
 .characters-list {
+
+  .page-header > .page-header__title {
+    display: none;
+  }
+
   &__form {
     width: 100%;
 
@@ -12,10 +17,12 @@
   &__content {
     width: 100%;
     margin-top: 3rem;
-  }
 
-  .page-header > .page-header__title {
-    display: none;
+    &-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+      gap: 2rem;
+    }
   }
 
   @include md {
