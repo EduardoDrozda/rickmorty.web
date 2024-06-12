@@ -15,7 +15,11 @@
   </div>
   @if (characters?.length) {
   <div class="characters-list__content">
-    <div class="characters-list__content-list">
+    <div
+      class="characters-list__content-list"
+      rickmortyInfiniteScroll
+      (endElementEmitter)="onScrollEnd()"
+    >
       @for (character of characters; track $index) {
       <rickmorty-characters-card [character]="character" />
       }

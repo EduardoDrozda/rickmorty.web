@@ -7,6 +7,7 @@ import {
   FeedbackInfoComponent,
 } from '@modules/characters/shared/components';
 import { ICharacterViewModel } from '@modules/characters/shared/interfaces/view-models';
+import { InfiniteScrollDirective } from '@shared/directives/infinite-scroll';
 import { debounceTime, distinctUntilChanged } from 'rxjs';
 
 @Component({
@@ -17,6 +18,7 @@ import { debounceTime, distinctUntilChanged } from 'rxjs';
     ReactiveFormsModule,
     FeedbackInfoComponent,
     CharactersCardComponent,
+    InfiniteScrollDirective,
   ],
   templateUrl: './characters-list-layout.component.html',
   styleUrl: './characters-list-layout.component.scss',
@@ -24,6 +26,7 @@ import { debounceTime, distinctUntilChanged } from 'rxjs';
 export class CharactersListLayoutComponent {
   @Input() characters: ICharacterViewModel[] | null = [];
   @Output() searchEvent = new EventEmitter<string>();
+  @Output() scrollEndEvent = new EventEmitter<string>();
 
   searchControl = new FormControl('');
 
@@ -38,5 +41,10 @@ export class CharactersListLayoutComponent {
   emitSearchEvent(): void {
     const search = this.searchControl.value ?? '';
     this.searchEvent.emit(search);
+  }
+
+  onScrollEnd(): void {
+    const search = this.searchControl.value ?? '';
+    this.scrollEndEvent.emit(search);
   }
 }

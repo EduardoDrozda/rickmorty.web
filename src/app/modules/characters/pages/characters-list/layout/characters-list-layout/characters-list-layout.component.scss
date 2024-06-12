@@ -1,9 +1,11 @@
 @import "mixins.scss";
 
 .characters-list {
-
-  .page-header > .page-header__title {
-    display: none;
+  .page-header {
+    padding: 0 0.5rem;
+    .page-header__title {
+      display: none;
+    }
   }
 
   &__form {
@@ -18,10 +20,20 @@
     width: 100%;
     margin-top: 3rem;
 
+    padding-bottom: 3rem;
+
     &-list {
       display: grid;
+      max-height: calc(100vh - 17rem);
       grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
       gap: 2rem;
+
+      overflow-y: auto;
+      overflow-x: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
     }
   }
 

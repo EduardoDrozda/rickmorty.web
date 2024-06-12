@@ -1,4 +1,5 @@
 <rickmorty-characters-list-layout
-  [characters]="characters$ | async"
+  [characters]="characters"
   (searchEvent)="getCharacterByName($event)"
+  (scrollEndEvent)="getMoreCharacters($event)"
 />
