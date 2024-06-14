@@ -7,6 +7,7 @@ import {
   FeedbackInfoComponent,
 } from '@modules/characters/shared/components';
 import { ICharacterViewModel } from '@modules/characters/shared/interfaces/view-models';
+import { LoaderComponent } from '@shared/components';
 import { InfiniteScrollDirective } from '@shared/directives/infinite-scroll';
 import { debounceTime, distinctUntilChanged } from 'rxjs';
 
@@ -17,6 +18,7 @@ import { debounceTime, distinctUntilChanged } from 'rxjs';
     CommonModule,
     ReactiveFormsModule,
     FeedbackInfoComponent,
+    LoaderComponent,
     CharactersCardComponent,
     InfiniteScrollDirective,
   ],
@@ -25,6 +27,8 @@ import { debounceTime, distinctUntilChanged } from 'rxjs';
 })
 export class CharactersListLayoutComponent {
   @Input() characters: ICharacterViewModel[] | null = [];
+  @Input() isLoading = false;
+  @Input() isLoadingMore = true;
   @Output() searchEvent = new EventEmitter<string>();
   @Output() scrollEndEvent = new EventEmitter<string>();
 

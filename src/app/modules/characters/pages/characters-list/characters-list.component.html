@@ -1,5 +1,6 @@
 <rickmorty-characters-list-layout
   [characters]="characters"
+  [isLoading]="isLoading"
   (searchEvent)="getCharacterByName($event)"
   (scrollEndEvent)="getMoreCharacters($event)"
 />

@@ -18,13 +18,25 @@
 
   &__content {
     width: 100%;
-    margin-top: 3rem;
+    margin-top: 1.5rem;
 
-    padding-bottom: 3rem;
+    &-loader {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: calc(100vh - 30rem);
+    }
+
+    &-loader-scroll {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
     &-list {
       display: grid;
-      max-height: calc(100vh - 17rem);
+      max-height: calc(100vh - 16rem);
       grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
       gap: 2rem;
 

@@ -1,20 +1,26 @@
 <header class="header">
-  <img class="header__logo" src="/png/logo.png" alt="Imagem escrito rick and morty" />
+  <img
+    class="header__logo"
+    src="/png/logo.png"
+    alt="Imagem escrito rick and morty"
+  />
   <nav class="header__nav">
-    @for (menu of menus; track $index) {
-    <a
-      class="header__nav-item"
-      [routerLink]="menu.path"
-      [ngClass]="{ 'header__nav-item--active': menu.path === currentRoute }"
-    >
-      <span class="header__nav-item-icon">
-        <fa-icon [icon]="menu.icon"></fa-icon>
-      </span>
-      <span>{{ menu.name }}</span>
-      @if (menu.hasCount) {
-      <span class="header__nav-item-badge">{{ favoriteCount }}</span>
-      }
-    </a>
-    }
+    <ng-container *ngFor="let menu of menus; let i = index">
+      <a
+        [id]="menu.name"
+        class="header__nav-item"
+        [routerLink]="menu.path"
+        [ngClass]="{ 'header__nav-item--active': menu.path === currentRoute }"
+      >
+        <span class="header__nav-item-icon">
+          <fa-icon [icon]="menu.icon"></fa-icon>
+        </span>
+        <span>{{ menu.name }}</span>
+
+        <ng-container *ngIf="menu.hasCount">
+          <span class="header__nav-item-badge">{{ favoriteCount }}</span>
+        </ng-container>
+      </a>
+    </ng-container>
   </nav>
 </header>

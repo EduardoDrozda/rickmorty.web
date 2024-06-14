@@ -13,19 +13,29 @@
       </div>
     </div>
   </div>
-  @if (characters?.length) {
+
   <div class="characters-list__content">
-    <div
-      class="characters-list__content-list"
-      rickmortyInfiniteScroll
-      (endElementEmitter)="onScrollEnd()"
-    >
-      @for (character of characters; track $index) {
-      <rickmorty-characters-card [character]="character" />
-      }
-    </div>
+    <ng-container *ngIf="isLoading; else list">
+      <div class="characters-list__content-loader">
+        <rickmorty-loader />
+      </div>
+    </ng-container>
+    <ng-template #list>
+      <ng-container *ngIf="characters?.length; else feedback">
+        <div
+          class="characters-list__content-list"
+          rickmortyInfiniteScroll
+          (endElementEmitter)="onScrollEnd()"
+        >
+          <ng-container *ngFor="let character of characters">
+            <rickmorty-characters-card [character]="character" />
+          </ng-container>
+        </div>
+      </ng-container>
+
+      <ng-template #feedback>
+        <rickmorty-feedback-info />
+      </ng-template>
+    </ng-template>
   </div>
-  } @else {
-  <rickmorty-feedback-info />
-  }
 </section>
