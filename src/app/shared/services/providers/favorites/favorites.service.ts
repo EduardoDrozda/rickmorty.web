@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { ICharacterViewModel } from '@core/view-models';
 import { BehaviorSubject, Observable } from 'rxjs';
 
-
 @Injectable({
   providedIn: 'root',
 })
@@ -28,13 +27,10 @@ export class FavoritesService {
   }
 
   removeFavorite(character: ICharacterViewModel): void {
-    const currentFavorites = this.favorites.getValue();
-    this.favorites.next(
-      currentFavorites.filter((item) => item.id !== character.id)
-    );
-  }
+    const currentFavorites = this.favorites
+      .getValue()
+      .filter((item) => item.id !== character.id);
 
-  getFavoritesCount(): number {
-    return this.favorites.getValue().length;
+    this.favorites.next(currentFavorites);
   }
 }

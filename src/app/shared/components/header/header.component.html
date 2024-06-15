@@ -1,1 +1,4 @@
-<rickmorty-header-layout />
+<rickmorty-header-layout
+  [menus]="menus"
+  [favoriteCount]="(favorites$ | async)!.length"
+/>

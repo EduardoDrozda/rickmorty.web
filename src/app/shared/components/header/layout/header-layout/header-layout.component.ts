@@ -17,38 +17,6 @@ import { FontComponent } from '@shared/components/font';
 })
 export class HeaderLayoutComponent {
   @Input() favoriteCount = 0;
-
-  currentRoute!: string;
-
-  menus: IMenu[] = [
-    {
-      name: 'Inicio',
-      path: `/${RoutesEnum.CHARACTERS}`,
-      icon: 'house',
-    },
-    {
-      name: 'Favoritos',
-      path: `/${RoutesEnum.CHARACTERS}/${RoutesEnum.FAVORITES}`,
-      icon: 'heart',
-      hasCount: true,
-    },
-  ];
-
-  constructor(private readonly route: Router) {
-    this.route.events
-      .pipe(
-        takeUntilDestroyed(),
-        filter((event) => event instanceof NavigationEnd)
-      )
-      .subscribe({
-        next: () => {
-          const url = this.route.url;
-          this.setCurrentRoute(url);
-        },
-      });
-  }
-
-  setCurrentRoute(route: string): void {
-    this.currentRoute = route;
-  }
+  @Input() currentRoute = '';
+  @Input() menus: IMenu[] = [];
 }

@@ -58,11 +58,11 @@ export class CharactersListLayoutComponent {
   }
 
   onFavorite(index: number): void {
-    const character: ICharacterViewModel = {
-      ...this.characters![index],
-      isFavorite: !this.characters![index].isFavorite,
-    };
-    this.characters![index] = character;
+    const character: ICharacterViewModel = this.characters![index];
     this.favoriteEvent.emit(character);
+    this.characters![index] = {
+      ...character,
+      isFavorite: !character.isFavorite,
+    };
   }
 }
