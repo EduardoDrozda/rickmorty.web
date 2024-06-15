@@ -31,6 +31,7 @@ export class CharactersListLayoutComponent {
   @Input() isLoadingMore = true;
   @Output() searchEvent = new EventEmitter<string>();
   @Output() scrollEndEvent = new EventEmitter<string>();
+  @Output() favoriteEvent = new EventEmitter<ICharacterViewModel>();
 
   searchControl = new FormControl('');
 
@@ -57,10 +58,11 @@ export class CharactersListLayoutComponent {
   }
 
   onFavorite(index: number): void {
-    const character = this.characters![index];
-    this.characters![index] = {
-      ...character,
-      isFavorite: !character.isFavorite,
+    const character: ICharacterViewModel = {
+      ...this.characters![index],
+      isFavorite: !this.characters![index].isFavorite,
     };
+    this.characters![index] = character;
+    this.favoriteEvent.emit(character);
   }
 }

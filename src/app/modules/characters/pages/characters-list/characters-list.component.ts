@@ -1,6 +1,9 @@
 import { Component, DestroyRef, OnInit, inject } from '@angular/core';
 import { CharactersListLayoutComponent } from './layout/characters-list-layout';
-import { CharactersService } from '@modules/characters/shared/services/providers/characters';
+import {
+  CharactersService,
+  FavoritesService,
+} from '@modules/characters/shared/services/providers';
 import { Observable, finalize } from 'rxjs';
 import { ICharacterViewModel } from '@modules/characters/shared/interfaces/view-models';
 import { CommonModule } from '@angular/common';
@@ -14,6 +17,8 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 })
 export class CharactersListComponent implements OnInit {
   private readonly charactersService = inject(CharactersService);
+  private readonly favoritesService = inject(FavoritesService);
+
   private destroyRef = inject(DestroyRef);
   private page = 1;
 
@@ -50,5 +55,9 @@ export class CharactersListComponent implements OnInit {
     return this.charactersService
       .getCharacters(filter)
       .pipe(takeUntilDestroyed(this.destroyRef));
+  }
+
+  onFavorite(character: ICharacterViewModel): void {
+    this.favoritesService.addRemoveFavorite(character);
   }
 }

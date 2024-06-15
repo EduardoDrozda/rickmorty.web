@@ -12,7 +12,16 @@ export class FavoritesService {
     return this.favorites.asObservable();
   }
 
-  addFavorite(character: ICharacterViewModel): void {
+  addRemoveFavorite(character: ICharacterViewModel): void {
+    if (character.isFavorite) {
+      this.removeFavorite(character);
+      return;
+    }
+
+    this.addFavorite(character);
+  }
+
+  private addFavorite(character: ICharacterViewModel): void {
     const currentFavorites = this.favorites.getValue();
     this.favorites.next([...currentFavorites, character]);
   }
@@ -22,5 +31,9 @@ export class FavoritesService {
     this.favorites.next(
       currentFavorites.filter((item) => item.id !== character.id)
     );
+  }
+
+  getFavoritesCount(): number {
+    return this.favorites.getValue().length;
   }
 }
