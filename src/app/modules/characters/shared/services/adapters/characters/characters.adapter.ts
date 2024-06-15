@@ -11,6 +11,8 @@ export class CharactersAdapter
       name: item.name,
       status: item.status,
       species: item.species,
+      location: item.location.name,
+      origin: item.origin.name,
       image: item.image,
     }));
   }

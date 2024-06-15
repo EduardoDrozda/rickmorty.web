@@ -46,16 +46,11 @@
       text-overflow: ellipsis;
     }
 
-    &-species {
-      font-size: 1rem;
-      font-weight: 400;
-      color: var(--color-core-content-low);
-      font-family: "Poppins", sans-serif;
-      margin-top: 0.5rem;
+    &-status-container {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
 
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
     }
 
     &-status {
@@ -98,6 +93,32 @@
         &--unknown {
           background-color: var(--color-core-content-low);
         }
+      }
+    }
+
+    &-info {
+      margin-top: 1rem;
+
+      &-title {
+        font-size: 1rem;
+        font-weight: 400;
+        color: var(--color-core-content-low);
+        font-family: "Poppins", sans-serif;
+        text-transform: capitalize;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      &-description {
+        font-size: 1rem;
+        font-weight: 400;
+        color: var(--color-core-white);
+        font-family: "Poppins", sans-serif;
+        text-transform: capitalize;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
     }
   }

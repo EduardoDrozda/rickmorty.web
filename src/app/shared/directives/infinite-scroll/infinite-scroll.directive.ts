@@ -8,7 +8,7 @@ export class InfiniteScrollDirective {
   @Output() endElementEmitter = new EventEmitter<void>();
 
   @HostListener('scroll', ['$event.target'])
-  onEndDiv(event: any) {
+  onEndDiv(event: any): void {
     const isEndElement =
       event.offsetHeight + event.scrollTop >= event.scrollHeight;
 

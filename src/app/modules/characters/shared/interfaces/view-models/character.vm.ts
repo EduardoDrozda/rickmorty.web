@@ -3,6 +3,8 @@ export interface ICharacterViewModel {
   name: string;
   status: string;
   species: string;
+  location: string;
+  origin: string;
   image: string;
   isFavorite?: boolean;
 }

@@ -6,37 +6,51 @@
   />
   <div class="characters-card__content">
     <h2 class="characters-card__content-name">{{ character.name }}</h2>
-    <p class="characters-card__content-species">
-      {{ character.species }}
-    </p>
-    <div class="characters-card__content-status">
-      <div
-        class="characters-card__content-status-badge"
-        [ngClass]="{
-          'characters-card__content-status-badge--alive':
-            character.status === 'Alive',
-          'characters-card__content-status-badge--dead':
-            character.status === 'Dead',
-          'characters-card__content-status-badge--unknown':
-            character.status === 'unknown'
-        }"
-      ></div>
-      <p class="characters-card__content-status-info">{{ character.status }}</p>
+    <div class="characters-card__content-status-container">
+      <div class="characters-card__content-status">
+        <div
+          class="characters-card__content-status-badge"
+          [ngClass]="{
+            'characters-card__content-status-badge--alive':
+              character.status === 'Alive',
+            'characters-card__content-status-badge--dead':
+              character.status === 'Dead',
+            'characters-card__content-status-badge--unknown':
+              character.status === 'unknown'
+          }"
+        ></div>
+        <p class="characters-card__content-status-info">
+          {{ character.status }} - {{ character.species }}
+        </p>
+      </div>
     </div>
-  </div>
-  <div
-    class="characters-card__favorite"
-    [ngClass]="{
+
+    <div class="characters-card__content-info">
+      <p class="characters-card__content-info-title">Last known location:</p>
+      <p class="characters-card__content-info-description">
+        {{ character.location }}
+      </p>
+    </div>
+
+    <div class="characters-card__content-info">
+      <p class="characters-card__content-info-title">First seen in:</p>
+      <p class="characters-card__content-info-description">
+        {{ character.origin }}
+      </p>
+    <div
+      class="characters-card__favorite"
+      [ngClass]="{
     'characters-card__favorite--active': character.isFavorite,
   }"
-  >
-    <div class="characters-card__favorite-icon">
-      <rickmorty-button-icon
-        [id]="character.name"
-        [icon]="icon"
-        [color]="color"
-        (clickEvent)="onFavorite()"
-      />
+    >
+      <div class="characters-card__favorite-icon">
+        <rickmorty-button-icon
+          [id]="character.name"
+          [icon]="icon"
+          [color]="color"
+          (clickEvent)="onFavorite()"
+        />
+      </div>
     </div>
   </div>
 </div>
