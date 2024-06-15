@@ -7,8 +7,9 @@ import { ICharacterViewModel } from '../../interfaces/view-models';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './characters-card.component.html',
-  styleUrl: './characters-card.component.scss'
+  styleUrl: './characters-card.component.scss',
 })
 export class CharactersCardComponent {
   @Input({ required: true }) character!: ICharacterViewModel;
+  @Input() isFavorite = false;
 }

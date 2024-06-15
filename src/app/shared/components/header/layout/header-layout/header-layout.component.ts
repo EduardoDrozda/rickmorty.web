@@ -1,16 +1,17 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RoutesEnum } from '@shared/enums';
-import { APP_ICONS, FontsModule } from '@shared/modules';
+
 import { NavigationEnd, Router, RouterModule } from '@angular/router';
 import { filter } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { IMenu } from '../../interfaces';
+import { APP_ICONS, FontComponent } from '@shared/components/font';
 
 @Component({
   selector: 'rickmorty-header-layout',
   standalone: true,
-  imports: [CommonModule, FontsModule, RouterModule],
+  imports: [CommonModule, RouterModule, FontComponent],
   templateUrl: './header-layout.component.html',
   styleUrl: './header-layout.component.scss',
 })
