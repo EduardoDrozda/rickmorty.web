@@ -1,3 +1,9 @@
-<div [id]="id">
-  <fa-icon [icon]="icon"></fa-icon>
+<div [id]="id" class="font">
+  <fa-icon
+    [icon]="iconDefinition"
+    [size]="size"
+    [ngClass]="{
+    'font__white': color === 'white',
+  }"
+  ></fa-icon>
 </div>

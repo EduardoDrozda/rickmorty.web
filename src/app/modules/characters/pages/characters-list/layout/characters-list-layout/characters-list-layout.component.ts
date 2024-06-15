@@ -51,4 +51,16 @@ export class CharactersListLayoutComponent {
     const search = this.searchControl.value ?? '';
     this.scrollEndEvent.emit(search);
   }
+
+  trackByFn(index: number): number {
+    return index;
+  }
+
+  onFavorite(index: number): void {
+    const character = this.characters![index];
+    this.characters![index] = {
+      ...character,
+      isFavorite: !character.isFavorite,
+    };
+  }
 }

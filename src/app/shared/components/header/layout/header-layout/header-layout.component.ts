@@ -24,12 +24,12 @@ export class HeaderLayoutComponent {
     {
       name: 'Inicio',
       path: `/${RoutesEnum.CHARACTERS}`,
-      icon: APP_ICONS.house,
+      icon: 'house',
     },
     {
       name: 'Favoritos',
       path: `/${RoutesEnum.CHARACTERS}/${RoutesEnum.FAVORITES}`,
-      icon: APP_ICONS.heart,
+      icon: 'heart',
       hasCount: true,
     },
   ];

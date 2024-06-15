@@ -13,12 +13,30 @@
       <div
         class="characters-card__content-status-badge"
         [ngClass]="{
-          'characters-card__content-status-badge--alive': character.status === 'Alive',
-          'characters-card__content-status-badge--dead': character.status === 'Dead',
-          'characters-card__content-status-badge--unknown': character.status === 'unknown'
+          'characters-card__content-status-badge--alive':
+            character.status === 'Alive',
+          'characters-card__content-status-badge--dead':
+            character.status === 'Dead',
+          'characters-card__content-status-badge--unknown':
+            character.status === 'unknown'
         }"
       ></div>
       <p class="characters-card__content-status-info">{{ character.status }}</p>
+    </div>
+  </div>
+  <div
+    class="characters-card__favorite"
+    [ngClass]="{
+    'characters-card__favorite--active': character.isFavorite,
+  }"
+  >
+    <div class="characters-card__favorite-icon">
+      <rickmorty-button-icon
+        [id]="character.name"
+        [icon]="icon"
+        [color]="color"
+        (clickEvent)="onFavorite()"
+      />
     </div>
   </div>
 </div>

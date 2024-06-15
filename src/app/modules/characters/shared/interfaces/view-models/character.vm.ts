@@ -4,4 +4,5 @@ export interface ICharacterViewModel {
   status: string;
   species: string;
   image: string;
+  isFavorite?: boolean;
 }

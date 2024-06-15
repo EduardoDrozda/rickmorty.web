@@ -2,6 +2,7 @@
   width: 100%;
   background-color: var(--color-core-black);
   border-radius: 0.5rem;
+  position: relative;
 
   &:hover {
     transform: scale(1.03);
@@ -98,6 +99,33 @@
           background-color: var(--color-core-content-low);
         }
       }
+    }
+  }
+
+  &__favorite {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 3rem;
+    width: 3rem;
+    z-index: 1;
+    border-bottom-left-radius: 3rem;
+    background-color: transparent;
+    backdrop-filter: blur(1rem);
+
+    &--active {
+      backdrop-filter: blur(0);
+      background-color: var(--color-core-white);
+    }
+
+    &-icon {
+      position: absolute;
+      top: 20%;
+      left: 25%;
+
+      width: 1.5rem;
+      height: 1.5rem;
+      color: var(--color-core-white);
     }
   }
 }
