@@ -11,6 +11,7 @@ export class CharactersAdapter
       name: item.name,
       status: item.status,
       species: item.species,
+      gender: item.gender,
       location: item.location.name,
       origin: item.origin.name,
       image: item.image,
