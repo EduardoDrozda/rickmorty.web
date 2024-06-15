@@ -11,7 +11,6 @@ import { ICharacterViewModel } from '../../interfaces/view-models';
 import {
   APP_ICONS,
   ButtonIconComponent,
-  FontComponent,
 } from '@shared/components';
 
 @Component({

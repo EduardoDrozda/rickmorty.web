@@ -37,7 +37,7 @@ export class CharactersListLayoutComponent {
   constructor() {
     this.searchControl.valueChanges
       .pipe(debounceTime(400), distinctUntilChanged(), takeUntilDestroyed())
-      .subscribe((value) => {
+      .subscribe(() => {
         this.emitSearchEvent();
       });
   }

@@ -6,7 +6,7 @@ import { NavigationEnd, Router, RouterModule } from '@angular/router';
 import { filter } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { IMenu } from '../../interfaces';
-import { APP_ICONS, FontComponent } from '@shared/components/font';
+import { FontComponent } from '@shared/components/font';
 
 @Component({
   selector: 'rickmorty-header-layout',
