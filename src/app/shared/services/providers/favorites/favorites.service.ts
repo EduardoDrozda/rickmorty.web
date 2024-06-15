@@ -12,6 +12,10 @@ export class FavoritesService {
     return this.favorites.asObservable();
   }
 
+  getFavoritesValue(): ICharacterViewModel[] {
+    return this.favorites.getValue();
+  }
+
   addRemoveFavorite(character: ICharacterViewModel): void {
     if (character.isFavorite) {
       this.removeFavorite(character);

@@ -1,9 +1,6 @@
 import { Component, DestroyRef, OnInit, inject } from '@angular/core';
 import { CharactersListLayoutComponent } from './layout/characters-list-layout';
-import {
-  CharactersService,
-
-} from '@modules/characters/shared/services/providers';
+import { CharactersService } from '@modules/characters/shared/services/providers';
 import { Observable, finalize } from 'rxjs';
 
 import { CommonModule } from '@angular/common';
@@ -38,9 +35,17 @@ export class CharactersListComponent implements OnInit {
     this.getCharacters({ name, page: this.page.toString() })
       .pipe(finalize(() => (this.isLoading = false)))
       .subscribe({
-        next: (characters) => (this.characters = characters),
+        next: (characters) => this.getFavoritesCharacters(characters),
         error: (error) => console.error(error),
       });
+  }
+
+  private getFavoritesCharacters(characters: ICharacterViewModel[]): void {
+    const favorites = this.favoritesService.getFavoritesValue();
+    this.characters = characters.map((character) => ({
+      ...character,
+      isFavorite: favorites.some((fav) => fav.id === character.id),
+    }));
   }
 
   getMoreCharacters(name: string): void {
