@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { HeaderLayoutComponent } from './layout';
+import { FavoritesService } from '@shared/services/providers';
 
 @Component({
   selector: 'rickmorty-header',
@@ -7,4 +8,6 @@ import { HeaderLayoutComponent } from './layout';
   imports: [HeaderLayoutComponent],
   templateUrl: './header.component.html',
 })
-export class HeaderComponent {}
+export class HeaderComponent {
+  private readonly favoriteService = inject(FavoritesService);
+}

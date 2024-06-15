@@ -1,5 +1,5 @@
-import { ICharacterModel } from '@modules/characters/shared/interfaces/models';
-import { ICharacterViewModel } from '@modules/characters/shared/interfaces/view-models';
+import { ICharacterModel } from 'src/app/core/models';
+import { ICharacterViewModel } from '@core/view-models';
 import { IAdapter } from '@shared/interfaces/contracts';
 
 export class CharactersAdapter

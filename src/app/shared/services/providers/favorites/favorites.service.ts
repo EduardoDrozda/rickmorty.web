@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
+import { ICharacterViewModel } from '@core/view-models';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { ICharacterViewModel } from '../../../interfaces/view-models';
+
 
 @Injectable({
   providedIn: 'root',

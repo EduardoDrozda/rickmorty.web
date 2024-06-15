@@ -2,12 +2,14 @@ import { Component, DestroyRef, OnInit, inject } from '@angular/core';
 import { CharactersListLayoutComponent } from './layout/characters-list-layout';
 import {
   CharactersService,
-  FavoritesService,
+
 } from '@modules/characters/shared/services/providers';
 import { Observable, finalize } from 'rxjs';
-import { ICharacterViewModel } from '@modules/characters/shared/interfaces/view-models';
+
 import { CommonModule } from '@angular/common';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { FavoritesService } from '@shared/services/providers';
+import { ICharacterViewModel } from '@core/view-models';
 
 @Component({
   selector: 'rickmorty-characters-list',

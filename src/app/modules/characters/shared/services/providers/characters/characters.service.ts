@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import { IRequestDataAccess } from '@modules/characters/shared/interfaces/data-access';
-import { ICharacterModel } from '@modules/characters/shared/interfaces/models';
+import { IRequestDataAccess } from 'src/app/core/data-access';
+import { ICharacterModel } from 'src/app/core/models';
 import { HttpService } from '@shared/services/providers';
 import { Observable, map } from 'rxjs';
 import { CharactersAdapter } from '../../adapters/characters';
-import { ICharacterViewModel } from '@modules/characters/shared/interfaces/view-models';
+import { ICharacterViewModel } from '@core/view-models';
 
 @Injectable({
   providedIn: 'root',

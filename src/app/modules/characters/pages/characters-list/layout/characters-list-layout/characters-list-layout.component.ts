@@ -6,7 +6,7 @@ import {
   CharactersCardComponent,
   FeedbackInfoComponent,
 } from '@modules/characters/shared/components';
-import { ICharacterViewModel } from '@modules/characters/shared/interfaces/view-models';
+import { ICharacterViewModel } from '@core/view-models';
 import { LoaderComponent } from '@shared/components';
 import { InfiniteScrollDirective } from '@shared/directives/infinite-scroll';
 import { debounceTime, distinctUntilChanged } from 'rxjs';

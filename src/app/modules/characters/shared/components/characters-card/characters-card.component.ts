@@ -7,7 +7,7 @@ import {
   Output,
   SimpleChanges,
 } from '@angular/core';
-import { ICharacterViewModel } from '../../interfaces/view-models';
+import { ICharacterViewModel } from '../../../../../core/view-models';
 import {
   APP_ICONS,
   ButtonIconComponent,
