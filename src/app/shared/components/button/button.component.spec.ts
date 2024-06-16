@@ -25,6 +25,7 @@ describe('ButtonComponent', () => {
   it('should emit click event', () => {
     component.id = 'button';
     fixture.detectChanges();
+
     jest.spyOn(component, 'onClick');
     const button = fixture.debugElement.query(By.css('[id="button"]'));
     button.triggerEventHandler('click', null);

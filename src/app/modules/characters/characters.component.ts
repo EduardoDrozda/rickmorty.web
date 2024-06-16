@@ -6,8 +6,7 @@ import { RouterOutlet } from '@angular/router';
   selector: 'rickmorty-characters',
   standalone: true,
   imports: [CommonModule, RouterOutlet],
-  templateUrl: './characters.component.html',
-  styleUrl: './characters.component.scss'
+  templateUrl: './characters.component.html'
 })
 export class CharactersComponent {
 
