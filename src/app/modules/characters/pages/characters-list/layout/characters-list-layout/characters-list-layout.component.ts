@@ -2,14 +2,11 @@ import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
-import {
-  CharactersCardComponent,
-  FeedbackInfoComponent,
-} from '@modules/characters/shared/components';
+import { FeedbackInfoComponent } from '@modules/characters/shared/components';
 import { ICharacterViewModel } from '@core/view-models';
 import { LoaderComponent } from '@shared/components';
-import { InfiniteScrollDirective } from '@shared/directives/infinite-scroll';
 import { debounceTime, distinctUntilChanged } from 'rxjs';
+import { CharactersListGridComponent } from '@modules/characters/shared/components/characters-list-grid';
 
 @Component({
   selector: 'rickmorty-characters-list-layout',
@@ -19,16 +16,14 @@ import { debounceTime, distinctUntilChanged } from 'rxjs';
     ReactiveFormsModule,
     FeedbackInfoComponent,
     LoaderComponent,
-    CharactersCardComponent,
-    InfiniteScrollDirective,
+    CharactersListGridComponent,
   ],
   templateUrl: './characters-list-layout.component.html',
   styleUrl: './characters-list-layout.component.scss',
 })
 export class CharactersListLayoutComponent {
   @Input() characters: ICharacterViewModel[] | null = [];
-  @Input() isLoading = false;
-  @Input() isLoadingMore = true;
+  @Input() isLoading = true;
   @Output() searchEvent = new EventEmitter<string>();
   @Output() scrollEndEvent = new EventEmitter<string>();
   @Output() favoriteEvent = new EventEmitter<ICharacterViewModel>();
