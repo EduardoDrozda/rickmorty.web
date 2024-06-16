@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CharactersListGridComponent } from './characters-list-grid.component';
+import { CHARACTERS_MOCK_VIEW_MODEL } from '@shared/mocks/characters';
 
 describe('CharactersListGridComponent', () => {
   let component: CharactersListGridComponent;
@@ -41,7 +42,7 @@ describe('CharactersListGridComponent', () => {
   });
 
   it('should track by id', () => {
-    const character = { id: 1 } as any;
+    const character = CHARACTERS_MOCK_VIEW_MODEL[0];
     expect(component.trackByFn(1, character)).toBe(1);
   });
 });

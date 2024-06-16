@@ -8,19 +8,19 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [FontComponent],
   template: '<rickmorty-font id="mock-id" icon="house" color="white" />'
-}) class FontComponentTest {}
+}) class FontMockTestComponent {}
 
 describe('FontComponent', () => {
-  let component: FontComponentTest;
-  let fixture: ComponentFixture<FontComponentTest>;
+  let component: FontMockTestComponent;
+  let fixture: ComponentFixture<FontMockTestComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [FontComponentTest, FontComponent]
+      imports: [FontMockTestComponent, FontComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(FontComponentTest);
+    fixture = TestBed.createComponent(FontMockTestComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

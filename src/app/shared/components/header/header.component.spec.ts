@@ -2,40 +2,41 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HeaderComponent } from './header.component';
 
-import { ActivatedRoute, NavigationEnd, Router, provideRouter } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { of } from 'rxjs';
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
   let fixture: ComponentFixture<HeaderComponent>;
 
-  let router = {
+  const router = {
     events: of(new NavigationEnd(0, '/characters', '/characters')),
     url: '/characters',
-    createUrlTree: () => { },
-    serializeUrl: () => { }
-  }
+    createUrlTree: jest.fn(),
+    serializeUrl: jest.fn(),
+  };
 
-  let activatedRoute = {
+  const activatedRoute = {
     snapshot: {
       data: {
-        title: 'Characters'
-      }
-    }
-  }
-
+        title: 'Characters',
+      },
+    },
+  };
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [HeaderComponent],
-      providers: [{
-        provide: Router,
-        useValue: router
-      }, {
-        provide: ActivatedRoute,
-        useValue: activatedRoute
-
-      }]
+      providers: [
+        {
+          provide: Router,
+          useValue: router,
+        },
+        {
+          provide: ActivatedRoute,
+          useValue: activatedRoute,
+        },
+      ],
     }).compileComponents();
 
     fixture = TestBed.createComponent(HeaderComponent);

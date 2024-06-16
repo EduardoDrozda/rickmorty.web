@@ -9,7 +9,7 @@ import { CHARACTERS_MOCK } from '@shared/mocks/characters';
 describe('CharactersService', () => {
   let service: CharactersService;
 
-  let httpClientMock = HTTP_SERVICE_MOCK;
+  const httpClientMock = HTTP_SERVICE_MOCK;
 
   beforeEach(() => {
     TestBed.configureTestingModule({

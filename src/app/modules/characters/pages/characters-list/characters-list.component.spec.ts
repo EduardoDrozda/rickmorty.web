@@ -9,7 +9,7 @@ describe('CharactersListComponent', () => {
   let component: CharactersListComponent;
   let fixture: ComponentFixture<CharactersListComponent>;
 
-  let charactersService = {
+  const charactersService = {
     getCharacters: jest.fn().mockReturnValue(of(CHARACTERS_MOCK_VIEW_MODEL)),
   };
 
@@ -61,7 +61,9 @@ describe('CharactersListComponent', () => {
       .spyOn(charactersService, 'getCharacters')
       .mockReturnValue(throwError(() => 'Error'));
 
-    jest.spyOn(console, 'error').mockImplementation(() => {});
+    jest.spyOn(console, 'error').mockImplementation(() => {
+      return 'Error';
+    });
 
     component.getCharacterByName('');
     expect(charactersService.getCharacters).toHaveBeenCalled();
@@ -164,7 +166,9 @@ describe('CharactersListComponent', () => {
       .spyOn(charactersService, 'getCharacters')
       .mockReturnValue(throwError(() => 'Error'));
 
-    jest.spyOn(console, 'error').mockImplementation(() => {});
+    jest.spyOn(console, 'error').mockImplementation(() => {
+      return 'Error'
+    });
 
     component.getMoreCharacters('Rick');
     expect(charactersService.getCharacters).toHaveBeenCalled();

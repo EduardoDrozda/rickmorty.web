@@ -6,12 +6,14 @@ import { Component } from '@angular/core';
 import { By } from '@angular/platform-browser';
 
 @Component({
-  selector: 'rickandmorty-mock-buton-component',
+  selector: 'rickmorty-mock-buton-component',
   template:
     '<rickmorty-button-icon id="button-icon" icon="heart" (clickEvent)="onClick()" />',
 })
 class MockButtonComponent {
-  onClick(): void {}
+  onClick(): string {
+    return 'click event'
+  }
 }
 
 describe('ButtonIconComponent', () => {

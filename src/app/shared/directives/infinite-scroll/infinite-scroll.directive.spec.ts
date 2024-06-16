@@ -13,8 +13,8 @@ import { By } from '@angular/platform-browser';
   </div>`,
 })
 class TestComponent {
-  onScrollEnd(event: any) {
-    // Handler function
+  onScrollEnd(event: Event) {
+    return event;
   }
 }
 

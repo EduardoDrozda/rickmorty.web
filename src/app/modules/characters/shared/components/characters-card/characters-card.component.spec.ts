@@ -1,18 +1,12 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CharactersCardComponent } from './characters-card.component';
-import {
-  Component,
-  SimpleChange,
-  SimpleChanges,
-  ViewChild,
-} from '@angular/core';
+import { Component, SimpleChange, ViewChild } from '@angular/core';
 import { ICharacterViewModel } from '@core/view-models';
 import { CHARACTERS_MOCK_VIEW_MODEL } from '@shared/mocks/characters';
-import { By } from '@angular/platform-browser';
 
 @Component({
-  selector: 'rickandmoty-character-card',
+  selector: 'rickmorty-character-card',
   standalone: true,
   imports: [CharactersCardComponent],
   template: `

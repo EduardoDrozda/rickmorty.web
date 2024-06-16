@@ -1,9 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { CharactersFavoritesLayoutComponent } from './characters-favorites-layout.component';
-import { By } from '@angular/platform-browser';
-import { CHARACTERS_MOCK_VIEW_MODEL } from '@shared/mocks/characters';
-import { ICharacterViewModel } from '@core/view-models';
 
 describe('CharactersFavoritesLayoutComponent', () => {
   let component: CharactersFavoritesLayoutComponent;
