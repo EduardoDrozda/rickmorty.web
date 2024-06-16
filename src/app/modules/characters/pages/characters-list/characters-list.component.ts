@@ -35,14 +35,18 @@ export class CharactersListComponent implements OnInit {
     this.getCharacters({ name, page: this.page.toString() })
       .pipe(finalize(() => (this.isLoading = false)))
       .subscribe({
-        next: (characters) => this.getFavoritesCharacters(characters),
+        next: (characters) => {
+          this.characters = this.getFavoritesCharacters(characters);
+        },
         error: (error) => console.error(error),
       });
   }
 
-  private getFavoritesCharacters(characters: ICharacterViewModel[]): void {
+  private getFavoritesCharacters(
+    characters: ICharacterViewModel[]
+  ): ICharacterViewModel[] {
     const favorites = this.favoritesService.getFavoritesValue();
-    this.characters = characters.map((character) => ({
+    return characters.map((character) => ({
       ...character,
       isFavorite: favorites.some((fav) => fav.id === character.id),
     }));
@@ -51,7 +55,11 @@ export class CharactersListComponent implements OnInit {
   getMoreCharacters(name: string): void {
     this.page++;
     this.getCharacters({ page: this.page.toString(), name }).subscribe({
-      next: (characters) => this.characters.push(...characters),
+      next: (characters) => {
+        this.characters = this.characters.concat(
+          this.getFavoritesCharacters(characters)
+        );
+      },
       error: (error) => console.error(error),
     });
   }
