@@ -26,4 +26,8 @@ export class CharactersFavoritesComponent {
   removeFavorite(index: number): void {
     this.favoritesService.removeFavorite(index);
   }
+
+  navigateToCharacters(): void {
+    this.router.navigate(['characters']);
+  }
 }

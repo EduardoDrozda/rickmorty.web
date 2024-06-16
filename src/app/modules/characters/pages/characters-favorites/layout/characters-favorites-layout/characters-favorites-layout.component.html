@@ -3,9 +3,15 @@
     [characters]="characters"
     [enableInfiniteScroll]="false"
     (favoriteEvent)="onFavorite($event)"
-
   />
 </ng-container>
 <ng-template #feedback>
-  <rickmorty-feedback-info />
+  <rickmorty-feedback-info
+    title="Parece que você ainda não tem favoritos"
+    subtitle="Volte à página inicial e escolha os melhores para você."
+  >
+    <div class="characters-favorites__navigate-container">
+      <button class="button" (click)="onNavigate()">Voltar ao início</button>
+    </div>
+  </rickmorty-feedback-info>
 </ng-template>

@@ -6,6 +6,7 @@
     <rickmorty-characters-favorites-layout
       [characters]="(favorites$ | async)!"
       (favoriteEvent)="removeFavorite($event)"
+      (navigateEvent)="navigateToCharacters()"
     />
   </section>
 </div>

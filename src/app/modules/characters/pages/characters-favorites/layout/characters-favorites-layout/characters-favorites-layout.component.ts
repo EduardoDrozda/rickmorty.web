@@ -16,8 +16,13 @@ import {
 export class CharactersFavoritesLayoutComponent {
   @Input() characters: ICharacterViewModel[] = [];
   @Output() favoriteEvent = new EventEmitter<number>();
+  @Output() navigateEvent = new EventEmitter<void>();
 
   onFavorite(index: number) {
     this.favoriteEvent.emit(index);
+  }
+
+  onNavigate() {
+    this.navigateEvent.emit();
   }
 }

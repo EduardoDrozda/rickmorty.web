@@ -1,0 +1,21 @@
+@import "theme.scss";
+@import "fonts.scss";
+
+.button {
+  background-color: var(--color-core-neutral-surface);
+  color: var(--color-core-neutral-content-onSource);
+  padding: 0.6rem;
+  border-radius: 0.6rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--color-core-content-low);
+  }
+
+  &:active {
+    background-color: var(--color-core-neutral-surface);
+  }
+}
