@@ -1,4 +1,4 @@
-import { Component, DestroyRef, OnInit, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { HeaderLayoutComponent } from './layout';
 import { FavoritesService } from '@shared/services/providers';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
@@ -17,7 +17,6 @@ import { CommonModule } from '@angular/common';
 })
 export class HeaderComponent {
   private readonly favoriteService = inject(FavoritesService);
-  private readonly destroyRef = inject(DestroyRef);
 
   favorites$!: Observable<ICharacterViewModel[]>;
   currentRoute = '';
