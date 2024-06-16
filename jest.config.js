@@ -23,6 +23,7 @@ module.exports = {
     "!src/app/**/*.interface.ts",
     "!src/app/**/*.model.ts",
     "!src/app/**/*.enum",
+    "!src/app/**/*.mock.ts",
   ],
 
 };
