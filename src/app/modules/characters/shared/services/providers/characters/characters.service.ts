@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { IRequestDataAccess } from 'src/app/core/data-access';
 import { ICharacterModel } from 'src/app/core/models';
 import { HttpService } from '@shared/services/providers';
@@ -10,7 +10,7 @@ import { ICharacterViewModel } from '@core/view-models';
   providedIn: 'root',
 })
 export class CharactersService {
-  constructor(private readonly httpService: HttpService) {}
+  private readonly httpService: HttpService = inject(HttpService);
 
   getCharacters(
     filter?: Record<string, string>

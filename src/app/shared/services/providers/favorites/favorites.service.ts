@@ -35,7 +35,6 @@ export class FavoritesService {
 
   removeFavorite(id: number): void {
     const currentFavorites = this.favorites.getValue();
-    console.log(id);
     const filteredFavorites = currentFavorites.filter(
       (character) => character.id !== id
     );

@@ -7,13 +7,11 @@ import { By } from '@angular/platform-browser';
 
 @Component({
   selector: 'rickandmorty-mock-buton-component',
-  template: '<rickmorty-button-icon id="button-icon" icon="heart" (clickEvent)="onClick()" />'
+  template:
+    '<rickmorty-button-icon id="button-icon" icon="heart" (clickEvent)="onClick()" />',
 })
 class MockButtonComponent {
-
-  onClick() {
-    console.log('clicked');
-  }
+  onClick(): void {}
 }
 
 describe('ButtonIconComponent', () => {
@@ -24,8 +22,7 @@ describe('ButtonIconComponent', () => {
     await TestBed.configureTestingModule({
       imports: [ButtonIconComponent, FontComponent],
       declarations: [MockButtonComponent],
-    })
-    .compileComponents();
+    }).compileComponents();
 
     fixture = TestBed.createComponent(MockButtonComponent);
     component = fixture.componentInstance;

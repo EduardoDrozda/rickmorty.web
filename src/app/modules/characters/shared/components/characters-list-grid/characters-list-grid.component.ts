@@ -32,7 +32,6 @@ export class CharactersListGridComponent {
   }
 
   onScrollEnd(): void {
-    console.log('onScrollEnd');
     if (!this.enableInfiniteScroll) return;
     this.scrollEndEvent.emit();
   }
