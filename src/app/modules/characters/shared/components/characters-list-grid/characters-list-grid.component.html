@@ -1,21 +1,15 @@
-<ng-container *ngIf="characters?.length; else feedback">
-  <div
-    class="characters-list-grid"
-    rickmortyInfiniteScroll
-    (endElementEmitter)="onScrollEnd()"
+<div
+  class="characters-list-grid"
+  rickmortyInfiniteScroll
+  (endElementEmitter)="onScrollEnd()"
+>
+  <ng-container
+    *ngFor="let character of characters; let i = index; trackBy: trackByFn"
   >
-    <ng-container
-      *ngFor="let character of characters; let i = index; trackBy: trackByFn"
-    >
-      <rickmorty-characters-card
-        [character]="character"
-        [index]="i"
-        (favoriteEvent)="onFavorite($event)"
-      />
-    </ng-container>
-  </div>
-</ng-container>
-
-<ng-template #feedback>
-  <rickmorty-feedback-info />
-</ng-template>
+    <rickmorty-characters-card
+      [character]="character"
+      [index]="i"
+      (favoriteEvent)="onFavorite($event)"
+    />
+  </ng-container>
+</div>

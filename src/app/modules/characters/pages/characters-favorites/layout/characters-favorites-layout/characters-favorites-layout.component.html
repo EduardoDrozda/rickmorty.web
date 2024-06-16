@@ -1,0 +1,11 @@
+<ng-container *ngIf="characters?.length; else feedback">
+  <rickmorty-characters-list-grid
+    [characters]="characters"
+    [enableInfiniteScroll]="false"
+    (favoriteEvent)="onFavorite($event)"
+
+  />
+</ng-container>
+<ng-template #feedback>
+  <rickmorty-feedback-info />
+</ng-template>

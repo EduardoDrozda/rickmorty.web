@@ -6,7 +6,7 @@ import { FeedbackInfoComponent } from '@modules/characters/shared/components';
 import { ICharacterViewModel } from '@core/view-models';
 import { LoaderComponent } from '@shared/components';
 import { debounceTime, distinctUntilChanged } from 'rxjs';
-import { CharactersListGridComponent } from '@modules/characters/shared/components/characters-list-grid';
+import { CharactersListGridComponent } from '@modules/characters/shared/components';
 
 @Component({
   selector: 'rickmorty-characters-list-layout',

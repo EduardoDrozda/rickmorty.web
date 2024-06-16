@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ICharacterViewModel } from '@core/view-models';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -18,7 +18,7 @@ export class FavoritesService {
 
   addRemoveFavorite(character: ICharacterViewModel): void {
     if (character.isFavorite) {
-      this.removeFavorite(character);
+      this.removeFavorite(character.id);
       return;
     }
 
@@ -26,15 +26,14 @@ export class FavoritesService {
   }
 
   private addFavorite(character: ICharacterViewModel): void {
+    const newCharacter = { ...character, isFavorite: true };
     const currentFavorites = this.favorites.getValue();
-    this.favorites.next([...currentFavorites, character]);
+    this.favorites.next([...currentFavorites, newCharacter]);
   }
 
-  removeFavorite(character: ICharacterViewModel): void {
-    const currentFavorites = this.favorites
-      .getValue()
-      .filter((item) => item.id !== character.id);
-
+  removeFavorite(index: number): void {
+    const currentFavorites = this.favorites.getValue();
+    currentFavorites.splice(index, 1);
     this.favorites.next(currentFavorites);
   }
 }

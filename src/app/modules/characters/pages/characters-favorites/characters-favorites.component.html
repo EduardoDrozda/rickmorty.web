@@ -1,5 +1,11 @@
-<ng-container>
+<div class="characters-favorites">
   <section class="page-header">
     <h1 class="page-header__title">Favoritos</h1>
   </section>
-</ng-container>
+  <section class="characters-favorites__content">
+    <rickmorty-characters-favorites-layout
+      [characters]="(favorites$ | async)!"
+      (favoriteEvent)="removeFavorite($event)"
+    />
+  </section>
+</div>

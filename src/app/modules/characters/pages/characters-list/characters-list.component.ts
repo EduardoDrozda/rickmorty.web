@@ -1,5 +1,5 @@
 import { Component, DestroyRef, OnInit, inject } from '@angular/core';
-import { CharactersListLayoutComponent } from './layout/characters-list-layout';
+import { CharactersListLayoutComponent } from './layout';
 import { CharactersService } from '@modules/characters/shared/services/providers';
 import { Observable, finalize } from 'rxjs';
 

@@ -1,5 +1,5 @@
-<section class="characters-list">
-  <div class="page-header">
+<div class="characters-list">
+  <section class="page-header">
     <h1 class="page-header__title">Início</h1>
     <div class="characters-list__form">
       <div class="input">
@@ -12,21 +12,26 @@
         <label for="id">Pesquisar</label>
       </div>
     </div>
-  </div>
+  </section>
 
-  <div class="characters-list__content">
+  <section class="characters-list__content">
     <ng-container *ngIf="isLoading; else list">
       <div class="characters-list__content-loader">
         <rickmorty-loader />
       </div>
     </ng-container>
     <ng-template #list>
-      <rickmorty-characters-list-grid
-        [characters]="characters!"
-        [enableInfiniteScroll]="true"
-        (favoriteEvent)="onFavorite($event)"
-        (scrollEndEvent)="onScrollEnd()"
-      />
+      <ng-container *ngIf="characters?.length; else feedback">
+        <rickmorty-characters-list-grid
+          [characters]="characters!"
+          [enableInfiniteScroll]="true"
+          (favoriteEvent)="onFavorite($event)"
+          (scrollEndEvent)="onScrollEnd()"
+        />
+      </ng-container>
+      <ng-template #feedback>
+        <rickmorty-feedback-info />
+      </ng-template>
     </ng-template>
-  </div>
-</section>
+  </section>
+</div>
