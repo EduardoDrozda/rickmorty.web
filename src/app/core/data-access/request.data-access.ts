@@ -7,5 +7,5 @@ interface IRequestDataAccessInfo {
   count: number;
   pages: number;
   next: string;
-  prev: string;
+  prev?: string;
 }
