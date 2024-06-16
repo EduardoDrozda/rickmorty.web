@@ -102,8 +102,14 @@
                 "input": "public"
               }
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/app/styles/scss"
+              ]
+            },
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/app/styles/scss/main.scss"
             ],
             "scripts": []
           }
