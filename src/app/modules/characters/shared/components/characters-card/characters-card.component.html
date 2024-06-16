@@ -6,6 +6,9 @@
   />
   <div class="characters-card__content">
     <h2 class="characters-card__content-name">{{ character.name }}</h2>
+    <p class="characters-card__content-gender">
+      {{ character.gender }}
+    </p>
     <div class="characters-card__content-status-container">
       <div class="characters-card__content-status">
         <div
@@ -20,7 +23,7 @@
           }"
         ></div>
         <p class="characters-card__content-status-info">
-          {{ character.status }} - {{ character.species }}/{{ character.gender }}
+          {{ character.status }} - {{ character.species }}
         </p>
       </div>
     </div>

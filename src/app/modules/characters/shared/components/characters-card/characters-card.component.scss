@@ -46,6 +46,14 @@
       text-overflow: ellipsis;
     }
 
+    &-gender {
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--color-core-content-low);
+      font-family: "Poppins", sans-serif;
+      margin-top: 0.5rem;
+    }
+
     &-status-container {
       display: flex;
       align-items: center;
@@ -64,12 +72,6 @@
         font-weight: 400;
         color: var(--color-core-content-low);
         font-family: "Poppins", sans-serif;
-        margin-top: 0.5;
-        text-transform: capitalize;
-
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
       }
 
       &-badge {
