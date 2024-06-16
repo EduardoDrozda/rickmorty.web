@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ButtonComponent } from './button.component';
+import { By } from '@angular/platform-browser';
 
 describe('ButtonComponent', () => {
   let component: ButtonComponent;
@@ -19,5 +20,14 @@ describe('ButtonComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should emit click event', () => {
+    component.id = 'button';
+    fixture.detectChanges();
+    jest.spyOn(component, 'onClick');
+    const button = fixture.debugElement.query(By.css('[id="button"]'));
+    button.triggerEventHandler('click', null);
+    expect(component.onClick).toHaveBeenCalled();
   });
 });
