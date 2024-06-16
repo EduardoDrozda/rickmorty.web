@@ -24,7 +24,8 @@ export class CharactersFavoritesComponent {
   }
 
   removeFavorite(index: number): void {
-    this.favoritesService.removeFavorite(index);
+    const character = this.favoritesService.getFavoritesValue()[index];
+    this.favoritesService.removeFavorite(character.id);
   }
 
   navigateToCharacters(): void {

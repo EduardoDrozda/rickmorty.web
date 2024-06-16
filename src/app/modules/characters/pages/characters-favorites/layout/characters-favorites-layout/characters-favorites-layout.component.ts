@@ -5,11 +5,17 @@ import {
   CharactersListGridComponent,
   FeedbackInfoComponent,
 } from '@modules/characters/shared/components';
+import { ButtonComponent } from '@shared/components';
 
 @Component({
   selector: 'rickmorty-characters-favorites-layout',
   standalone: true,
-  imports: [CommonModule, CharactersListGridComponent, FeedbackInfoComponent],
+  imports: [
+    CommonModule,
+    CharactersListGridComponent,
+    FeedbackInfoComponent,
+    ButtonComponent,
+  ],
   templateUrl: './characters-favorites-layout.component.html',
   styleUrl: './characters-favorites-layout.component.scss',
 })

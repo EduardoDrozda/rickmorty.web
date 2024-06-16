@@ -9,7 +9,9 @@ export class FavoritesService {
   private favorites = new BehaviorSubject<ICharacterViewModel[]>([]);
 
   getFavorites(): Observable<ICharacterViewModel[]> {
-    return this.favorites.asObservable();
+    return this.favorites
+      .asObservable()
+      .pipe(map((favorites) => favorites.sort((a, b) => a.id - b.id)));
   }
 
   getFavoritesValue(): ICharacterViewModel[] {
@@ -31,9 +33,12 @@ export class FavoritesService {
     this.favorites.next([...currentFavorites, newCharacter]);
   }
 
-  removeFavorite(index: number): void {
+  removeFavorite(id: number): void {
     const currentFavorites = this.favorites.getValue();
-    currentFavorites.splice(index, 1);
-    this.favorites.next(currentFavorites);
+    console.log(id);
+    const filteredFavorites = currentFavorites.filter(
+      (character) => character.id !== id
+    );
+    this.favorites.next(filteredFavorites);
   }
 }

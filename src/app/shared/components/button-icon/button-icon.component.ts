@@ -7,7 +7,6 @@ import { APP_ICONS, FontComponent } from '../font';
   standalone: true,
   imports: [CommonModule, FontComponent],
   templateUrl: './button-icon.component.html',
-  styleUrl: './button-icon.component.scss',
 })
 export class ButtonIconComponent {
   @Input() id!: string;
